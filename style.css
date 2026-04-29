@@ -1,14 +1,17 @@
 body {
 	margin: 0px;
-	background-color: #1A1A1E;
+	background-color: #121214;
 }
 
 header {
     padding: 10px;
     text-align: center;
-	margin: 20px;
-	background-color: #121214;
-	
+	background-color: #1A1A1E;
+	border-style: solid;
+	border-color: #29292D;
+	border-width: 1px;
+	border-bottom-right-radius: 10px;
+	border-bottom-left-radius: 10px;
 }
 
 nav {
@@ -36,8 +39,14 @@ nav a {
 
 p {
 	color: white;
+	font-size: 25px;
 }
 
 h1 {
 	color: white;
+	font-size: 50px;
+}
+
+div{
+	margin: 10px;
 }
