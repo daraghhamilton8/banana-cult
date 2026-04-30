@@ -1,17 +1,27 @@
 body {
 	margin: 0px;
 	background-color: #121214;
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
 }
 
 header {
     padding: 10px;
     text-align: center;
 	background-color: #1A1A1E;
-	border-style: solid;
-	border-color: #29292D;
-	border-width: 1px;
+	border: 1px solid #29292D;
 	border-bottom-right-radius: 10px;
 	border-bottom-left-radius: 10px;
+}
+
+footer{
+	padding: 10px;
+    text-align: center;
+	background-color: #1A1A1E;
+	border: 1px solid #29292D;
+	border-top-right-radius: 10px;
+	border-top-left-radius: 10px;
 }
 
 nav {
@@ -49,4 +59,12 @@ h1 {
 
 div{
 	margin: 10px;
+}
+
+main{
+	display: flex;
+	flex-direction: column;
+	margin: 0px;
+	flex: 1;
+	
 }
