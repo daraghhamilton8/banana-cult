@@ -6,15 +6,19 @@ html, body {
 	font-family: Arial, sans-serif;
 }
 
-/* =========================
-   HEADER
-========================= */
+/* HEADER */
 header {
-	padding: 10px;
+	padding: 40px;
 	text-align: center;
 	background-color: #1A1A1E;
 	border: 1px solid #29292D;
 	color: white;
+	padding-left: 70px;
+}
+
+header h1 {
+	margin: 0;
+	font-size: 40px;
 }
 
 /* =========================
@@ -30,9 +34,7 @@ main {
 	transition: margin-left 0.3s ease;
 }
 
-/* =========================
-   FOOTER (FIXED)
-========================= */
+/* FOOTER */
 footer {
 	position: fixed;
 	bottom: 0;
@@ -45,9 +47,7 @@ footer {
 	color: white;
 }
 
-/* =========================
-   SIDEBAR RAIL
-========================= */
+/* SIDEBAR RAIL */
 .sidebar {
 	position: fixed;
 	top: 0;
@@ -70,9 +70,7 @@ footer {
 	width: 250px;
 }
 
-/* =========================
-   BUTTON
-========================= */
+/* BUTTON */
 .menu-btn {
 	position: fixed;
 	top: 10px;
@@ -94,9 +92,7 @@ footer {
 	transition: left 0.3s ease;
 }
 
-/* =========================
-   MENU TEXT
-========================= */
+/* MENU TEXT */
 .sidebar h2 {
 	color: white;
 	margin-left: 20px;
@@ -123,9 +119,13 @@ footer {
 	opacity: 1;
 }
 
-/* =========================
-   OPTIONAL OVERLAY FEEL
-========================= */
+/* OPTIONAL OVERLAY FEEL */
 .sidebar.active {
 	z-index: 5000;
+}
+
+#page-name {
+	color: #ffffff;
+	font-size: 20px;
+	margin-top: 4px;
 }
