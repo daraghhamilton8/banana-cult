@@ -1,70 +1,131 @@
-body {
-	margin: 0px;
-	background-color: #121214;
-	display: flex;
-	flex-direction: column;
-	min-height: 100vh;
+
+html, body {
+	margin: 0;
+	height: 100%;
+	background: #121214;
+	font-family: Arial, sans-serif;
 }
 
+/* =========================
+   HEADER
+========================= */
 header {
-    padding: 10px;
-    text-align: center;
-	background-color: #1A1A1E;
-	border: 1px solid #29292D;
-	border-bottom-right-radius: 10px;
-	border-bottom-left-radius: 10px;
-}
-
-footer{
 	padding: 10px;
-    text-align: center;
+	text-align: center;
 	background-color: #1A1A1E;
 	border: 1px solid #29292D;
-	border-top-right-radius: 10px;
-	border-top-left-radius: 10px;
+	color: white;
 }
 
-nav {
-    margin: 15px;
-}
-
-nav ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-}
-
-nav ul li {
-    display: inline;
-    margin-right: 20px;
-}
-
-nav a {
-    font-size: 20px;
-	padding-left: 10px;
-	padding-right: 10px;
-	text-decoration: none;
-	color: rgb(255, 255, 255);
-}
-
-p {
+/* =========================
+   MAIN CONTENT
+========================= */
+main {
+	padding: 20px;
 	color: white;
 	font-size: 25px;
+
+	/* always leave space for rail */
+	margin-left: 60px;
+	transition: margin-left 0.3s ease;
 }
 
-h1 {
+/* =========================
+   FOOTER (FIXED)
+========================= */
+footer {
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	padding: 10px;
+	text-align: center;
+	background-color: #1A1A1E;
+	border-top: 1px solid #29292D;
 	color: white;
-	font-size: 50px;
 }
 
-div{
-	margin: 10px;
+/* =========================
+   SIDEBAR RAIL
+========================= */
+.sidebar {
+	position: fixed;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 60px;
+
+	background: #1A1A1E;
+	border-right: 1px solid #29292D;
+
+	overflow: hidden;
+	transition: width 0.3s ease;
+
+	z-index: 2000;
+	box-shadow: 2px 0 10px rgba(0,0,0,0.4);
 }
 
-main{
-	display: flex;
-	flex-direction: column;
-	margin: 0px;
-	flex: 1;
-	
+/* EXPANDED SIDEBAR */
+.sidebar.active {
+	width: 250px;
+}
+
+/* =========================
+   BUTTON
+========================= */
+.menu-btn {
+	position: fixed;
+	top: 10px;
+	left: 10px;
+
+	width: 40px;
+	height: 40px;
+
+	background: #333;
+	color: white;
+	border: none;
+	cursor: pointer;
+	font-size: 20px;
+
+	border-radius: 6px;
+
+	z-index: 6000;
+
+	transition: left 0.3s ease;
+}
+
+/* =========================
+   MENU TEXT
+========================= */
+.sidebar h2 {
+	color: white;
+	margin-left: 20px;
+	opacity: 0;
+	transition: opacity 0.2s ease;
+}
+
+.sidebar.active h2 {
+	opacity: 1;
+}
+
+.sidebar a {
+	display: block;
+	color: white;
+	text-decoration: none;
+	padding: 10px 20px;
+	white-space: nowrap;
+
+	opacity: 0;
+	transition: opacity 0.2s ease;
+}
+
+.sidebar.active a {
+	opacity: 1;
+}
+
+/* =========================
+   OPTIONAL OVERLAY FEEL
+========================= */
+.sidebar.active {
+	z-index: 5000;
 }
