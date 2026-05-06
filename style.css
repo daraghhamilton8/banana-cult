@@ -1,37 +1,43 @@
+/* The default websitte theme */
+:root {
+	--bg-color: #121214;
+	--text-color: #ffffff;
+	--bor-color: #29292D;
+	--bg-bar-color: #1A1A1E;
+	--bg-butten-color: #333;
+}
+
+/* The theme for light */
+@media (prefers-color-scheme: light) {
+	:root{
+		--bg-color: #F3F3F4;
+		--text-color: #000000;
+		--bor-color: #D9D9DC;
+		--bg-bar-color: #FBFBFB;
+		--bg-butten-color: #b9b9b9;
+	}
+}
 
 html, body {
 	margin: 0;
 	height: 100%;
-	background: #121214;
+	background: var(--bg-color);
 	font-family: Arial, sans-serif;
 }
 
 /* HEADER */
 header {
 	padding: 40px;
+	padding-left: 60px;
 	text-align: center;
-	background-color: #1A1A1E;
-	border: 1px solid #29292D;
-	color: white;
-	padding-left: 70px;
+	background-color: var(--bg-bar-color);
+	border-bottom: 1px solid var(--bor-color);
+	color: var(--text-color);
 }
 
 header h1 {
 	margin: 0;
 	font-size: 40px;
-}
-
-/* =========================
-   MAIN CONTENT
-========================= */
-main {
-	padding: 20px;
-	color: white;
-	font-size: 25px;
-
-	/* always leave space for rail */
-	margin-left: 60px;
-	transition: margin-left 0.3s ease;
 }
 
 /* FOOTER */
@@ -41,13 +47,14 @@ footer {
 	left: 0;
 	width: 100%;
 	padding: 10px;
+	padding-left: 60px;
 	text-align: center;
-	background-color: #1A1A1E;
-	border-top: 1px solid #29292D;
-	color: white;
+	background-color: var(--bg-bar-color);
+	border-top: 1px solid var(--bor-color);
+	color: var(--text-color);
 }
 
-/* SIDEBAR RAIL */
+/* SIDEBAR */
 .sidebar {
 	position: fixed;
 	top: 0;
@@ -55,14 +62,14 @@ footer {
 	height: 100%;
 	width: 60px;
 
-	background: #1A1A1E;
-	border-right: 1px solid #29292D;
+	background: var(--bg-bar-color);
+	border-right: 1px solid var(--bor-color);
 
 	overflow: hidden;
 	transition: width 0.3s ease;
 
 	z-index: 2000;
-	box-shadow: 2px 0 10px rgba(0,0,0,0.4);
+	box-shadow: 2px 0 10px var(--bg-color);
 }
 
 /* EXPANDED SIDEBAR */
@@ -70,31 +77,9 @@ footer {
 	width: 250px;
 }
 
-/* BUTTON */
-.menu-btn {
-	position: fixed;
-	top: 10px;
-	left: 10px;
-
-	width: 40px;
-	height: 40px;
-
-	background: #333;
-	color: white;
-	border: none;
-	cursor: pointer;
-	font-size: 20px;
-
-	border-radius: 6px;
-
-	z-index: 6000;
-
-	transition: left 0.3s ease;
-}
-
-/* MENU TEXT */
+/* SIDEBAR MENU TEXT */
 .sidebar h2 {
-	color: white;
+	color: var(--text-color);
 	margin-left: 20px;
 	opacity: 0;
 	transition: opacity 0.2s ease;
@@ -106,7 +91,7 @@ footer {
 
 .sidebar a {
 	display: block;
-	color: white;
+	color: var(--text-color);
 	text-decoration: none;
 	padding: 10px 20px;
 	white-space: nowrap;
@@ -119,13 +104,39 @@ footer {
 	opacity: 1;
 }
 
-/* OPTIONAL OVERLAY FEEL */
 .sidebar.active {
 	z-index: 5000;
 }
 
-#page-name {
-	color: #ffffff;
+/* MAIN CONTENT */
+main {
+	padding: 20px;
+	color: var(--text-color);
+	font-size: 25px;
+
+	/* always leave space for rail */
+	margin-left: 60px;
+	transition: margin-left 0.3s ease;
+}
+
+/* BUTTON */
+.menu-btn {
+	position: fixed;
+	top: 10px;
+	left: 10px;
+
+	width: 40px;
+	height: 40px;
+
+	background: var(--bg-butten-color);
+	color: white;
+	border: 1px solid var(--bor-color);
+	cursor: pointer;
 	font-size: 20px;
-	margin-top: 4px;
+
+	border-radius: 6px;
+
+	z-index: 6000;
+
+	transition: left 0.3s ease;
 }

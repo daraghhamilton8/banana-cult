@@ -3,33 +3,27 @@ const pageNames = {
   "": "Home",
   "index.html": "Home",
   "gallery.html": "Gallery",
-  "Rogul.html": "Rogul",
-  "TheCrow.html": "The Crow"
+  "rogul.html": "Rogul",
+  "thecrow.html": "The Crow",
+  "newsletter.html": "News Letter"
 };
 
-/* HEADER + PAGE TITLE */
-fetch('/com.header.html')
+/* HEADER */
+fetch('/components/com.header.html')
   .then(res => res.text())
   .then(data => {
     document.getElementById('header').innerHTML = data;
-
-    const page = window.location.pathname.split("/").pop();
-    const title = document.getElementById("page-name");
-
-    if (title) {
-      title.textContent = pageNames[page] || "Home";
-    }
   });
 
 /* FOOTER */
-fetch('/com.footer.html')
+fetch('/components/com.footer.html')
   .then(res => res.text())
   .then(data => {
     document.getElementById('footer').innerHTML = data;
   });
 
 /* SIDEBAR + BUTTON */
-fetch('/com.sidebar.html')
+fetch('/components/com.sidebar.html')
   .then(res => res.text())
   .then(data => {
     const sidebar = document.getElementById('sidebar');
